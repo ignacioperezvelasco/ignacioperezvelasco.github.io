@@ -4,237 +4,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ignacio Pérez Velasco - Software HMI Architect</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Font Awesome para iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
-:root{
---bg:#f4f6f8;
---surface:#ffffff;
---primary:#16324f;
---secondary:#5c6b7a;
---text:#1f2933;
---muted:#6b7280;
---border:#d9e2ec;
---accent:#2f80ed;
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --primary: #16324f;
+  --secondary: #5c6b7a;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --border: #d9e2ec;
+  --accent: #2f80ed;
 }
 
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.45;
-animation:fadeIn 1s ease;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(10px)}
-to{opacity:1; transform:translateY(0)}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  animation: fadeIn 0.8s ease;
 }
 
-.page{
-max-width:1100px;
-margin:32px auto;
-background:var(--surface);
-box-shadow:0 10px 35px rgba(0,0,0,0.08);
-display:grid;
-grid-template-columns:300px 1fr;
-min-height:100vh;
-transition:0.3s;
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(10px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-.sidebar{
-background:var(--primary);
-color:#fff;
-padding:36px 28px;
+.page {
+  max-width: 1100px;
+  margin: 32px auto;
+  background: var(--surface);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
 }
 
-.main{
-padding:36px 40px;
+.sidebar {
+  background: var(--primary);
+  color: #fff;
+  padding: 36px 28px;
 }
 
-h1{
-margin:0;
-font-size:2rem;
-line-height:1.1;
-color:var(--primary);
+.main {
+  padding: 36px 40px;
 }
 
-.role{
-margin-top:8px;
-color:var(--secondary);
-font-size:1rem;
-font-weight:600;
+h1 {
+  font-size: 2rem;
+  color: var(--primary);
 }
 
-.section-title{
-margin:0 0 14px;
-font-size:0.95rem;
-letter-spacing:1px;
-font-weight:700;
-text-transform:uppercase;
-border-bottom:2px solid rgba(255,255,255,0.18);
-padding-bottom:8px;
-display:flex;
-align-items:center;
-gap:8px;
+.role {
+  margin-top: 8px;
+  color: var(--secondary);
+  font-weight: 600;
 }
 
-.main .section-title{
-color:var(--primary);
-border-bottom:2px solid var(--border);
+.section-title {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid rgba(255,255,255,0.18);
+  padding-bottom: 8px;
+}
+
+.main .section-title {
+  color: var(--primary);
+  border-bottom: 2px solid var(--border);
 }
 
 .sidebar-section,
-.main-section{
-margin-top:28px;
+.main-section {
+  margin-top: 28px;
 }
 
-.contact-item{
-font-size:0.95rem;
-margin-bottom:12px;
-display:flex;
-align-items:center;
-gap:10px;
+.contact-item {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.contact-item i{
-width:18px;
+.contact-item i {
+  width: 18px;
 }
 
 .skill-list,
-.compact-list{
-padding-left:18px;
-margin:0;
+.compact-list {
+  padding-left: 18px;
+  margin: 0;
 }
 
 .skill-list li,
-.compact-list li{
-margin-bottom:8px;
-font-size:0.94rem;
+.compact-list li {
+  margin-bottom: 8px;
+  font-size: 0.94rem;
 }
 
-.summary{
-margin-top:18px;
-font-size:1rem;
+.summary {
+  margin-top: 18px;
+  font-size: 1rem;
 }
 
-.job{
-margin-bottom:24px;
-padding:12px;
-border-radius:6px;
-transition:0.25s;
+.job {
+  margin-bottom: 24px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: 0.25s;
 }
 
-.job:hover{
-background:#f7fafc;
-transform:translateY(-2px);
+.job:hover {
+  background: #f7fafc;
+  transform: translateY(-2px);
 }
 
-.job-header{
-display:flex;
-justify-content:space-between;
-gap:16px;
-align-items:baseline;
-flex-wrap:wrap;
-margin-bottom:8px;
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
-.job-title{
-font-size:1.06rem;
-font-weight:700;
+.job-title {
+  font-size: 1.06rem;
+  font-weight: 700;
 }
 
-.job-date{
-color:var(--muted);
-font-size:0.95rem;
+.job-date {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.company{
-color:var(--accent);
-font-weight:600;
-margin-bottom:8px;
-font-size:0.95rem;
+.company {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
-.job ul{
-margin:0;
-padding-left:20px;
+.job ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
-.job li{
-margin-bottom:7px;
+.job li {
+  margin-bottom: 7px;
 }
 
-a{
-color:inherit;
-text-decoration:none;
-transition:0.2s;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-.main a{
-color:var(--accent);
+.main a {
+  color: var(--accent);
 }
 
-a:hover{
-opacity:0.7;
+a:hover {
+  opacity: 0.7;
 }
 
 @media (max-width:860px){
-.page{
-grid-template-columns:1fr;
-margin:0;
-}
-
-.sidebar,
-.main{
-padding:28px 22px;
-}
+  .page {
+    grid-template-columns:1fr;
+    margin: 0;
+  }
+  .sidebar,
+  .main {
+    padding: 28px 22px;
+  }
 }
 
 </style>
-
 </head>
 
 <body>
-
 <div class="page">
 
+<!-- Sidebar -->
 <aside class="sidebar">
 
 <section>
 <h2 class="section-title"><i class="fa-solid fa-address-card"></i> Contact</h2>
-
 <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Barcelona, Spain</div>
 <div class="contact-item"><i class="fa-solid fa-phone"></i> +34 653 049 656</div>
 <div class="contact-item"><i class="fa-solid fa-envelope"></i> ignacioperezvelasco12@gmail.com</div>
-
-<div class="contact-item">
-<i class="fa-brands fa-linkedin"></i>
-<a href="https://www.linkedin.com/in/ignacio-perez-velasco" target="_blank">LinkedIn</a>
-</div>
-
-<div class="contact-item">
-<i class="fa-brands fa-github"></i>
-<a href="https://github.com/ignacioperezvelasco" target="_blank">GitHub</a>
-</div>
-
-<div class="contact-item">
-<i class="fa-solid fa-gamepad"></i>
-<a href="https://ignacioperezvelasco.itch.io" target="_blank">Itch.io</a>
-</div>
-
+<div class="contact-item"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/ignacio-perez-velasco" target="_blank">LinkedIn</a></div>
+<div class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/ignacioperezvelasco" target="_blank">GitHub</a></div>
+<div class="contact-item"><i class="fa-solid fa-gamepad"></i> <a href="https://ignacioperezvelasco.itch.io" target="_blank">Itch.io</a></div>
 </section>
 
 <section class="sidebar-section">
 <h2 class="section-title"><i class="fa-solid fa-code"></i> Core Skills</h2>
-
 <ul class="skill-list">
 <li>C++</li>
 <li>Qt</li>
@@ -252,7 +233,6 @@ padding:28px 22px;
 
 <section class="sidebar-section">
 <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h2>
-
 <ul class="compact-list">
 <li>CLion</li>
 <li>Visual Studio</li>
@@ -262,69 +242,70 @@ padding:28px 22px;
 <li>Maya</li>
 <li>Atlassian ecosystem</li>
 </ul>
-
 </section>
 
 <section class="sidebar-section">
-
 <h2 class="section-title"><i class="fa-solid fa-language"></i> Languages</h2>
-
 <div>Spanish — Native</div>
 <div>Catalan — Native</div>
 <div>English — Intermediate</div>
-
 </section>
 
 <section class="sidebar-section">
-
 <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-
 <div><strong>BSc Interactive Digital Content Engineering</strong></div>
 <div>ENTI – University of Barcelona</div>
 <div>2016 – 2021</div>
-
 </section>
 
 </aside>
 
+<!-- Main -->
 <main class="main">
-
 <header>
-
 <h1>Ignacio Pérez Velasco</h1>
-
 <div class="role">Software HMI Architect | Automotive HMI | C++ / Qt</div>
-
 <p class="summary">
 Software HMI Architect specialized in automotive Instrument Cluster development using C++ and Qt on Embedded Linux.
 Experience building HMI systems deployed in production vehicles across multiple brands within the Volkswagen Group.
 Strong background in UI rendering, multithreading, graphics engines, architecture definition and performance optimization.
 </p>
-
 </header>
 
 <section class="main-section">
-
 <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
 
-<!-- Jobs remain same -->
+<article class="job">
+<div class="job-header">
+<div class="job-title">Software HMI Architect</div>
+<div class="job-date">2025 – Present</div>
+</div>
+<div class="company">Volkswagen Group Services</div>
+<ul>
+<li>Define and discuss software architecture for automotive Instrument Cluster HMI systems.</li>
+<li>Lead technical decision-making and provide transversal technical leadership across multiple teams.</li>
+<li>Define project structure and coding standards.</li>
+<li>Perform code reviews and mentor developers.</li>
+<li>Coordinate development with hardware, system and UX teams.</li>
+<li>Optimize multithreaded systems for better responsiveness.</li>
+<li>Improve UI rendering performance, FPS stability and boot-time behavior.</li>
+<li>Develop production software using C++, Qt and Embedded Linux with proprietary graphics engines.</li>
+</ul>
+</article>
+
+<!-- Puedes añadir el resto de trabajos de la misma forma -->
 
 </section>
 
 <section class="main-section">
-
 <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-
 <p>
 Personal and academic projects including university games, game jam entries and personal repositories on GitHub.
 Portfolio work available on Itch.io and GitHub.
 </p>
-
 </section>
 
 </main>
-
 </div>
-
 </body>
 </html>
